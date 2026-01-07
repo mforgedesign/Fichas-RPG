@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIRVANT | Ficha de Personagem - Dominus RPG</title>
+    <meta name="description"
+        content="Ficha de personagem de Sirvant, O Andarilho das Engrenagens - Constructo Primordial do RPG Dominus">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Decorative Lines -->
+    <div class="deco-lines">
+        <svg class="deco-line deco-line--left" viewBox="0 0 2 100" preserveAspectRatio="none">
+            <line x1="1" y1="0" x2="1" y2="100" stroke="currentColor" stroke-width="1" />
+        </svg>
+        <svg class="deco-line deco-line--right" viewBox="0 0 2 100" preserveAspectRatio="none">
+            <line x1="1" y1="0" x2="1" y2="100" stroke="currentColor" stroke-width="1" />
+        </svg>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="header__brand">
+            <span class="header__logo">◆</span>
+            <span class="header__text">DOMINUS RPG</span>
+        </div>
+        <nav class="header__nav">
+            <span class="header__nav-item">FICHA</span>
+            <span class="header__nav-divider">/</span>
+            <span class="header__nav-item header__nav-item--active">SIRVANT</span>
+        </nav>
+    </header>
+
+    <!-- Navigation Index -->
+    <nav class="nav-index" aria-label="Navegação por seções">
+        <a href="#hero" class="nav-index__item active" data-section="hero" aria-label="Início">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3" />
+                <path
+                    d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+            </svg>
+            <span class="nav-index__tooltip">INÍCIO</span>
+        </a>
+        <a href="#dados" class="nav-index__item" data-section="dados" aria-label="Dados Básicos">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <path d="M9 9h6M9 13h6M9 17h4" />
+            </svg>
+            <span class="nav-index__tooltip">DADOS</span>
+        </a>
+        <a href="#anatomia" class="nav-index__item" data-section="anatomia" aria-label="Anatomia">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="5" r="3" />
+                <path d="M12 8v8M8 12h8M12 16v4M8 20h8" />
+            </svg>
+            <span class="nav-index__tooltip">ANATOMIA</span>
+        </a>
+        <a href="#skills" class="nav-index__item" data-section="skills" aria-label="Skills">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12,2 15,8 22,9 17,14 18,21 12,18 6,21 7,14 2,9 9,8" />
+            </svg>
+            <span class="nav-index__tooltip">SKILLS</span>
+        </a>
+        <a href="#fraquezas" class="nav-index__item" data-section="fraquezas" aria-label="Fraquezas">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 9v4M12 17h.01" />
+                <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
+            </svg>
+            <span class="nav-index__tooltip">FRAQUEZAS</span>
+        </a>
+        <a href="#historia" class="nav-index__item" data-section="historia" aria-label="História">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 19.5A2.5 2.5 0 016.5 17H20" />
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" />
+                <path d="M8 7h8M8 11h8M8 15h4" />
+            </svg>
+            <span class="nav-index__tooltip">HISTÓRIA</span>
+        </a>
+    </nav>
+
+    <main class="main">
+        <!-- Hero Section -->
+        <section id="hero" class="hero section">
+            <div class="hero__content">
+                <div class="hero__text">
+                    <div class="hero__label animate-on-scroll">
+                        <span class="label-line"></span>
+                        <span>CONSTRUCTO PRIMORDIAL</span>
+                    </div>
+                    <h1 class="hero__title animate-on-scroll">
+                        <span class="hero__title-main">SIRVANT</span>
+                        <span class="hero__title-sub">O Andarilho das Engrenagens</span>
+                    </h1>
+                    <p class="hero__description animate-on-scroll">
+                        Um chassi bio-sintético de alta fidelidade, transitando entre
+                        o orgânico e o maquinário divino.
+                    </p>
+                    <div class="hero__meta animate-on-scroll">
+                        <div class="meta-item">
+                            <span class="meta-label">AFINIDADE</span>
+                            <span class="meta-value">Titãs</span>
+                        </div>
+                        <div class="meta-divider"></div>
+                        <div class="meta-item">
+                            <span class="meta-label">PUREZA</span>
+                            <span class="meta-value">Alta</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero__image animate-on-scroll">
+                    <div class="hero__image-frame">
+                        <div class="hero__image-corner hero__image-corner--tl"></div>
+                        <div class="hero__image-corner hero__image-corner--tr"></div>
+                        <div class="hero__image-corner hero__image-corner--bl"></div>
+                        <div class="hero__image-corner hero__image-corner--br"></div>
+                        <img src="img/Icon Inicial.jpg" alt="Sirvant - O Andarilho das Engrenagens">
+                    </div>
+                    <div class="hero__image-label">
+                        <span>REF_001</span>
+                        <span>VISUAL_ID</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__scroll-indicator">
+                <span>SCROLL</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- Basic Data Section -->
+        <section id="dados" class="section section--dark">
+            <div class="section__header animate-on-scroll">
+                <div class="section__number">01</div>
+                <h2 class="section__title">DADOS BÁSICOS</h2>
+                <div class="section__line"></div>
+            </div>
+
+            <div class="data-grid animate-on-scroll">
+                <div class="data-card">
+                    <div class="data-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 2v4M12 18v4M2 12h4M18 12h4" />
+                            <circle cx="12" cy="12" r="4" />
+                        </svg>
+                    </div>
+                    <div class="data-card__content">
+                        <span class="data-card__label">RAÇA</span>
+                        <span class="data-card__value">Constructo Primordial</span>
+                        <span class="data-card__desc">Raça única com anatomia de liga mecânica animada por mana
+                            primordial</span>
+                    </div>
+                </div>
+
+                <div class="data-card">
+                    <div class="data-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polygon points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5" />
+                            <line x1="12" y1="2" x2="12" y2="22" />
+                            <line x1="2" y1="8.5" x2="22" y2="8.5" />
+                        </svg>
+                    </div>
+                    <div class="data-card__content">
+                        <span class="data-card__label">NÍVEL DE PUREZA</span>
+                        <span class="data-card__value">Alta Pureza</span>
+                        <span class="data-card__desc">Essência concentrada, gimmicks poderosos com riscos
+                            acumulados</span>
+                    </div>
+                </div>
+
+                <div class="data-card">
+                    <div class="data-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7v10l10 5 10-5V7L12 2z" />
+                            <path d="M12 22V12" />
+                            <path d="M2 7l10 5 10-5" />
+                            <circle cx="12" cy="12" r="2" />
+                        </svg>
+                    </div>
+                    <div class="data-card__content">
+                        <span class="data-card__label">FORÇA ABSOLUTA</span>
+                        <span class="data-card__value">Titãs</span>
+                        <span class="data-card__desc">Afinidade com Ætherion e estruturas sintéticas, portadores de
+                            racionalidade</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Anatomy Section -->
+        <section id="anatomia" class="section">
+            <div class="section__header animate-on-scroll">
+                <div class="section__number">02</div>
+                <h2 class="section__title">ANATOMIA ABSOLUTA</h2>
+                <div class="section__line"></div>
+            </div>
+
+            <div class="anatomy animate-on-scroll">
+                <div class="anatomy__labels">
+                    <span class="anatomy__label anatomy__label--left">ORGÂNICO</span>
+                    <span class="anatomy__label anatomy__label--right">SINTÉTICO</span>
+                </div>
+
+                <div class="anatomy__slider" id="anatomySlider">
+                    <div class="anatomy__image anatomy__image--back">
+                        <img src="img/2.jpg" alt="Forma Cibernética de Sirvant">
+                    </div>
+                    <div class="anatomy__image anatomy__image--front" id="anatomyFront">
+                        <img src="img/1.jpg" alt="Forma Orgânica de Sirvant">
+                    </div>
+                    <div class="anatomy__handle" id="anatomyHandle">
+                        <div class="anatomy__handle-line"></div>
+                        <div class="anatomy__handle-grip">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="anatomy__handle-line"></div>
+                    </div>
+                </div>
+
+                <p class="anatomy__description animate-on-scroll">
+                    Sua existência é um <strong>chassi bio-sintético de alta fidelidade</strong>.
+                    Balizada por uma malha de Klironomia endoesquelética, sua anatomia absoluta
+                    transita entre o orgânico e o maquinário divino, onde <strong>nanoentidades
+                        de origem titânica</strong> reforçam cada fibra e articulação com densidade
+                    capaz de suportar as pressões cinéticas violentas.
+                </p>
+
+                <div class="anatomy__details animate-on-scroll">
+                    <div class="anatomy__detail">
+                        <span class="anatomy__detail-icon">◈</span>
+                        <span>Buffer noético neural</span>
+                    </div>
+                    <div class="anatomy__detail">
+                        <span class="anatomy__detail-icon">◈</span>
+                        <span>Interface de percepção etérea (HUD tático)</span>
+                    </div>
+                    <div class="anatomy__detail">
+                        <span class="anatomy__detail-icon">◈</span>
+                        <span>Âncora ontológica estrutural</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section section--dark">
+            <div class="section__header animate-on-scroll">
+                <div class="section__number">03</div>
+                <h2 class="section__title">SKILLS</h2>
+                <div class="section__line"></div>
+            </div>
+
+            <!-- Skill 1: Permita-me Tocar -->
+            <article class="skill animate-on-scroll">
+                <div class="skill__header">
+                    <div class="skill__tag">TÉCNICA INATA</div>
+                    <h3 class="skill__title">𝗣ERMITA-ME 𝗧OCAR</h3>
+                </div>
+
+                <div class="skill__content">
+                    <div class="skill__image">
+                        <img src="img/Representação da Técnica Permita-me tocar.png" alt="Permita-me Tocar">
+                    </div>
+                    <div class="skill__text">
+                        <p class="skill__description">
+                            Concede ao usuário a capacidade de <strong>reconfigurar à nível ontológico</strong>
+                            tudo aquilo que tocar, desde que possua a permissão do alvo (ou de uma
+                            autoridade superior) e o toque diretamente.
+                        </p>
+                        <div class="skill__details">
+                            <div class="skill__detail">
+                                <span class="skill__detail-label">Ativação</span>
+                                <span class="skill__detail-value">Toque direto + Comando vocal</span>
+                            </div>
+                            <div class="skill__detail">
+                                <span class="skill__detail-label">Requisito</span>
+                                <span class="skill__detail-value">Permissão consciente ou vacuidade de vontade</span>
+                            </div>
+                            <div class="skill__detail">
+                                <span class="skill__detail-label">Processamento</span>
+                                <span class="skill__detail-value">Terceirizado ao Éter Verdadeiro</span>
+                            </div>
+                        </div>
+                        <div class="skill__warning">
+                            <span class="skill__warning-icon">⚠</span>
+                            <span>Comandos descuidados podem extrair elementos vitais do próprio corpo. O verbo é um fio
+                                que corta ambos os lados.</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Skill 2: Damage Distortion -->
+            <article class="skill animate-on-scroll">
+                <div class="skill__header">
+                    <div class="skill__tag">TÉCNICA INATA</div>
+                    <h3 class="skill__title">𝗗AMAGE 𝗗ISTORTION</h3>
+                </div>
+
+                <div class="skill__content skill__content--reverse">
+                    <div class="skill__image skill__image--icon">
+                        <img src="img/Escudo quebrado que representa a habilidade Damage Distortion.png"
+                            alt="Damage Distortion">
+                    </div>
+                    <div class="skill__text">
+                        <p class="skill__description">
+                            Essa habilidade consiste em atribuir uma <strong>justa manipulação mútua</strong>
+                            dos danos e consequências que usuário troca com seus alvos. Permite travar
+                            e reter danos causados ou recebidos para liberação posterior.
+                        </p>
+                        <div class="skill__details">
+                            <div class="skill__detail">
+                                <span class="skill__detail-label">Efeito</span>
+                                <span class="skill__detail-value">Trava danos causados e recebidos</span>
+                            </div>
+                            <div class="skill__detail">
+                                <span class="skill__detail-label">Indicador</span>
+                                <span class="skill__detail-value">Auréola vermelha sobre alvos marcados</span>
+                            </div>
+                            <div class="skill__detail">
+                                <span class="skill__detail-label">Liberação</span>
+                                <span class="skill__detail-value">Ao desativar ou na morte do usuário</span>
+                            </div>
+                        </div>
+                        <div class="skill__warning">
+                            <span class="skill__warning-icon">⚠</span>
+                            <span>Se o acúmulo de consequências exceder a densidade do chassi, a destruição é
+                                instantânea.</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Skill 3: A Espada da Verdade -->
+            <article class="skill animate-on-scroll">
+                <div class="skill__header">
+                    <div class="skill__tag">ARTEFATO PRINCIPAL</div>
+                    <h3 class="skill__title">𝗔 𝗘SPADA DA 𝗩ERDADE</h3>
+                </div>
+
+                <div class="skill__content">
+                    <div class="skill__image skill__image--sword">
+                        <img src="img/Icon da Espada da Verdade.jpg" alt="A Espada da Verdade">
+                    </div>
+                    <div class="skill__text">
+                        <p class="skill__description">
+                            Envolto em metal iridescente, reside uma <strong>alma selada</strong> movida
+                            pela sede de fazer com que tudo retorne ao seu ponto de origem: o "criador".
+                            <strong>Incapaz de ferir</strong>, ela restaura, recarrega, energiza e ressuscita.
+                        </p>
+                        <div class="skill__capabilities">
+                            <span class="skill__capability">Vigor</span>
+                            <span class="skill__capability">Mana</span>
+                            <span class="skill__capability">Vitalidade</span>
+                            <span class="skill__capability">Cura</span>
+                            <span class="skill__capability">Rejuvenescimento</span>
+                            <span class="skill__capability">Ressurreição</span>
+                        </div>
+                        <div class="skill__details">
+                            <div class="skill__detail">
+                                <span class="skill__detail-label">Vínculo</span>
+                                <span class="skill__detail-value">Controle por vontade ou palavras</span>
+                            </div>
+                            <div class="skill__detail">
+                                <span class="skill__detail-label">Limitação</span>
+                                <span class="skill__detail-value">Portador é imune aos efeitos (não pode curar a
+                                    si)</span>
+                            </div>
+                            <div class="skill__detail">
+                                <span class="skill__detail-label">Indestrutível</span>
+                                <span class="skill__detail-value">Se reconstituí enquanto o portador viver</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill__gallery animate-on-scroll">
+                    <img src="img/Detalhes da Espada da Verdade.jpeg" alt="Detalhes da Espada">
+                    <img src="img/Poses com a Espada da Verdade.jpg" alt="Poses de Combate">
+                </div>
+            </article>
+        </section>
+
+        <!-- Weaknesses Section -->
+        <section id="fraquezas" class="section">
+            <div class="section__header animate-on-scroll">
+                <div class="section__number">04</div>
+                <h2 class="section__title">FRAQUEZAS NATURAIS</h2>
+                <div class="section__subtitle">Protocolos de Risco</div>
+                <div class="section__line"></div>
+            </div>
+
+            <div class="weaknesses animate-on-scroll">
+                <div class="weakness">
+                    <div class="weakness__icon">01</div>
+                    <div class="weakness__content">
+                        <h4 class="weakness__title">Aniquilação por Falha Ontológica</h4>
+                        <p class="weakness__text">
+                            A estrutura física atua como uma âncora de precisão; qualquer erro de
+                            cálculo na essência durante a reconfiguração resulta na desestruturação
+                            completa da existência. <strong>Falhar é apagar-se.</strong>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="weakness">
+                    <div class="weakness__icon">02</div>
+                    <div class="weakness__content">
+                        <h4 class="weakness__title">Efeito de Retorsão Linguística</h4>
+                        <p class="weakness__text">
+                            O Éter é indiferente e desprovido de intenção. Comandos descuidados podem
+                            extrair elementos vitais do próprio corpo para compor o objeto.
+                            <strong>O verbo é um fio que corta ambos os lados.</strong>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="weakness">
+                    <div class="weakness__icon">03</div>
+                    <div class="weakness__content">
+                        <h4 class="weakness__title">Colapso de Dano Acumulado</h4>
+                        <p class="weakness__text">
+                            A desativação da técnica libera a carga cinética represada de uma só vez.
+                            Se o acúmulo de consequências exceder a densidade do chassi,
+                            <strong>a destruição é instantânea.</strong>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="weakness">
+                    <div class="weakness__icon">04</div>
+                    <div class="weakness__content">
+                        <h4 class="weakness__title">Paradoxo da Sustentação</h4>
+                        <p class="weakness__text">
+                            Como um hospedeiro de massa finita, existe um teto de saturação.
+                            Tentar neutralizar poderes infinitos através do Éter pode resultar em
+                            <strong>implosão por sobrecarga.</strong>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="weakness">
+                    <div class="weakness__icon">05</div>
+                    <div class="weakness__content">
+                        <h4 class="weakness__title">Dependência Ambiental</h4>
+                        <p class="weakness__text">
+                            Em zonas de baixa densidade de mana, a estrutura entra em hibernação forçada.
+                            O corpo permanece vulnerável a vetores físicos puros, onde o Éter
+                            <strong>não encontra ancoragem para interferir.</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- History Section -->
+        <section id="historia" class="section section--dark">
+            <div class="section__header animate-on-scroll">
+                <div class="section__number">05</div>
+                <h2 class="section__title">HISTÓRIA & MOTIVAÇÃO</h2>
+                <div class="section__line"></div>
+            </div>
+
+            <div class="history animate-on-scroll">
+                <div class="history__content">
+                    <div class="history__chapter">
+                        <h3 class="history__subtitle">O Andarilho das Engrenagens</h3>
+                        <p class="history__text">
+                            Sirvant percorre os detritos de Dominus movido por uma <strong>diretriz
+                                gravada em seu núcleo neural</strong> — uma ordem de origem desconhecida.
+                            Seu propósito é localizar e restaurar as Arcanotécnicas e estruturas da
+                            Era das Máquinas, uma a uma.
+                        </p>
+                        <blockquote class="history__quote">
+                            "A máquina clama pelo seu arquiteto."
+                        </blockquote>
+                    </div>
+
+                    <div class="history__chapter">
+                        <h3 class="history__subtitle">O Conflito Interno</h3>
+                        <p class="history__text">
+                            Já parou para pensar que restaurar o passado pode ser a faísca para
+                            aniquilar o presente? Sirvant oscila entre dois caminhos:
+                        </p>
+
+                        <div class="history__paths">
+                            <div class="history__path">
+                                <span class="history__path-label">CAMINHO HUMANISTA</span>
+                                <p>O domínio da vontade para preservar a paz atual</p>
+                            </div>
+                            <div class="history__path-divider">
+                                <span>VS</span>
+                            </div>
+                            <div class="history__path">
+                                <span class="history__path-label">CAMINHO ARCANISTA</span>
+                                <p>A restauração da supremacia tecnológica que pode despertar os Titãs</p>
+                            </div>
+                        </div>
+
+                        <p class="history__conclusion">
+                            O destino é uma variável que ele ainda não aprendeu a calcular.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__content">
+            <div class="footer__brand">
+                <span class="footer__logo">◆</span>
+                <span>DOMINUS RPG</span>
+            </div>
+            <div class="footer__divider"></div>
+            <div class="footer__info">
+                <span>FICHA DE PERSONAGEM</span>
+                <span class="footer__separator">|</span>
+                <span>SIRVANT</span>
+            </div>
+        </div>
+        <div class="footer__line"></div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
