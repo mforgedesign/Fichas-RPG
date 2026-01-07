@@ -1254,11 +1254,12 @@ a {
     }
 
     .hero__meta {
+        justify-content: center;
         gap: var(--space-md);
     }
 
     .meta-item {
-        flex: 1;
+        text-align: center;
     }
 
     .meta-divider {
