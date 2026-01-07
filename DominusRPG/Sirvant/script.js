@@ -22,16 +22,14 @@
         }
 
         init() {
-            // Mouse events
+            // Mouse events - only on handle, not container
             this.handle.addEventListener('mousedown', (e) => this.startDrag(e));
-            this.container.addEventListener('mousedown', (e) => this.startDrag(e));
             document.addEventListener('mousemove', (e) => this.drag(e));
             document.addEventListener('mouseup', () => this.endDrag());
 
-            // Touch events
-            this.handle.addEventListener('touchstart', (e) => this.startDrag(e));
-            this.container.addEventListener('touchstart', (e) => this.startDrag(e));
-            document.addEventListener('touchmove', (e) => this.drag(e));
+            // Touch events - only on handle, not container
+            this.handle.addEventListener('touchstart', (e) => this.startDrag(e), { passive: false });
+            document.addEventListener('touchmove', (e) => this.drag(e), { passive: false });
             document.addEventListener('touchend', () => this.endDrag());
 
             // Set initial position
@@ -40,16 +38,18 @@
 
         startDrag(e) {
             e.preventDefault();
+            e.stopPropagation();
             this.isDragging = true;
-            this.container.style.cursor = 'grabbing';
-
-            // Immediately update position on click/touch
-            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-            this.calculatePosition(clientX);
+            this.handle.style.cursor = 'grabbing';
         }
 
         drag(e) {
             if (!this.isDragging) return;
+
+            // Prevent scroll while dragging
+            if (e.cancelable) {
+                e.preventDefault();
+            }
 
             const clientX = e.touches ? e.touches[0].clientX : e.clientX;
             this.calculatePosition(clientX);
@@ -73,7 +73,7 @@
 
         endDrag() {
             this.isDragging = false;
-            this.container.style.cursor = 'ew-resize';
+            this.handle.style.cursor = 'ew-resize';
         }
     }
 
