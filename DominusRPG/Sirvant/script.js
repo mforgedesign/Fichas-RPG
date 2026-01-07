@@ -305,11 +305,42 @@
         // Header Scroll Effect
         new HeaderScroll();
 
-        // Glitch Effect
+        // Glitch Effect - Main title
         const titleMain = document.querySelector('.hero__title-main');
         if (titleMain) {
             new GlitchEffect(titleMain);
         }
+
+        // Glitch Effect - Section titles
+        document.querySelectorAll('.section__title').forEach(el => {
+            new GlitchEffect(el);
+        });
+
+        // Glitch Effect - Decorative labels (subtle, less frequent)
+        const decorativeElements = [
+            ...document.querySelectorAll('.hero__image-label span'),
+            ...document.querySelectorAll('.anatomy__label'),
+            ...document.querySelectorAll('.section__number'),
+            ...document.querySelectorAll('.data-card__label'),
+            ...document.querySelectorAll('.skill__tag')
+        ];
+
+        decorativeElements.forEach(el => {
+            // Create a less frequent glitch for decorative elements
+            const originalText = el.textContent;
+            setInterval(() => {
+                if (Math.random() > 0.99) {
+                    const glitchChars = '░▒▓█▄▀■□◈◇';
+                    const text = originalText.split('');
+                    const pos = Math.floor(Math.random() * text.length);
+                    text[pos] = glitchChars[Math.floor(Math.random() * glitchChars.length)];
+                    el.textContent = text.join('');
+                    setTimeout(() => {
+                        el.textContent = originalText;
+                    }, 40);
+                }
+            }, 150);
+        });
 
         // Parallax
         new ParallaxEffect();
