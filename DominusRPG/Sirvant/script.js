@@ -172,7 +172,9 @@
     class HeaderScroll {
         constructor() {
             this.header = document.querySelector('.header');
+            this.navIndex = document.querySelector('.nav-index');
             this.lastScroll = 0;
+            this.navShown = false;
 
             if (this.header) {
                 this.init();
@@ -182,6 +184,12 @@
         init() {
             window.addEventListener('scroll', () => {
                 const currentScroll = window.pageYOffset;
+
+                // Show nav-index after any scroll
+                if (!this.navShown && currentScroll > 10 && this.navIndex) {
+                    this.navIndex.classList.add('visible');
+                    this.navShown = true;
+                }
 
                 if (currentScroll > 100) {
                     this.header.style.background = 'rgba(248, 248, 248, 0.95)';
