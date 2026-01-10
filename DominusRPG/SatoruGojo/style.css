@@ -1023,20 +1023,23 @@ strong {
     margin-top: var(--space-xl);
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 9 / 16;
+    /* Inverted because video is rotated */
     overflow: hidden;
     border: 1px solid var(--color-line);
-    background: var(--color-bg-dark);
+    background: transparent;
 }
 
 .eyes-video__player {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 100%;
+    /* Swap width/height because of 90deg rotation */
+    width: auto;
     height: 100%;
+    min-width: 100%;
     transform: translate(-50%, -50%) rotate(-90deg);
-    object-fit: contain;
+    object-fit: cover;
     filter: brightness(0.9) contrast(1.1);
 }
 
