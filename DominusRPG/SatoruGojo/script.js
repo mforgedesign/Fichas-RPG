@@ -377,6 +377,49 @@
     }
 
     // ========================================
+    // Video Player (Play on first interaction)
+    // ========================================
+
+    class VideoPlayer {
+        constructor() {
+            this.video = document.getElementById('eyesVideo');
+            if (!this.video) return;
+
+            this.hasPlayed = false;
+            this.init();
+        }
+
+        init() {
+            // Play on first user interaction
+            const playVideo = () => {
+                if (this.hasPlayed) return;
+
+                this.video.play().then(() => {
+                    this.hasPlayed = true;
+                    // Remove listeners after first play
+                    document.removeEventListener('click', playVideo);
+                    document.removeEventListener('touchstart', playVideo);
+                    document.removeEventListener('scroll', playVideo);
+                }).catch(err => {
+                    console.log('Video autoplay blocked:', err);
+                });
+            };
+
+            // Add listeners for various user interactions
+            document.addEventListener('click', playVideo, { once: false, passive: true });
+            document.addEventListener('touchstart', playVideo, { once: false, passive: true });
+            document.addEventListener('scroll', playVideo, { once: false, passive: true });
+
+            // Try to play immediately (might work if muted)
+            this.video.play().then(() => {
+                this.hasPlayed = true;
+            }).catch(() => {
+                // Autoplay blocked, will play on interaction
+            });
+        }
+    }
+
+    // ========================================
     // Initialize Everything
     // ========================================
 
@@ -398,6 +441,9 @@
 
         // Line Drawing
         new LineDrawing();
+
+        // Video Player
+        new VideoPlayer();
 
         console.log('SATORU GOJO Character Sheet initialized');
     });
